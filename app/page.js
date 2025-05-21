@@ -98,25 +98,24 @@ function LazyIframe({ url, thumb, index, isActive, onActivate, onDeactivate }) {
         </div>
 
         {/* Iframe */}
-        <div
-          className={`absolute inset-0 transition-opacity duration-500 ${
-            isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
-        >
-          <iframe
-            src={url}
-            title={`3D Tour ${index + 1}`}
-            allowFullScreen
-            className="w-full h-full border-0"
-          ></iframe>
+        {isActive && (
+  <div className="absolute inset-0 z-20">
+    <iframe
+      src={url}
+      title={`3D Tour ${index + 1}`}
+      allowFullScreen
+      className="w-full h-full border-0"
+    ></iframe>
 
-          <button
-            onClick={onDeactivate}
-            className="absolute top-3 right-3 z-20 bg-black/60 text-white text-xs px-3 py-1 rounded hover:bg-black/80"
-          >
-            Close
-          </button>
-        </div>
+    <button
+      onClick={onDeactivate}
+      className="absolute top-3 right-3 bg-black/60 text-white text-xs px-3 py-1 rounded hover:bg-black/80"
+    >
+      Close
+    </button>
+  </div>
+)}
+
       </div>
     </div>
   );
