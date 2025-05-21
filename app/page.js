@@ -75,7 +75,7 @@ export default function Home() {
 function LazyIframe({ url, thumb, index, isActive, onActivate, onDeactivate }) {
   return (
     <div className="w-full px-4 md:px-0">
-      <div className="relative w-full aspect-video md:w-[960px] md:h-[540px] rounded-xl overflow-hidden shadow-2xl border border-gray-800 mx-auto">
+      <div className="relative w-full aspect-[9/16] md:aspect-video md:w-[960px] md:h-[540px] rounded-xl overflow-hidden shadow-2xl border border-gray-800 mx-auto">
         {/* Preview */}
         <div
           className={`absolute inset-0 transition-opacity duration-500 ${
